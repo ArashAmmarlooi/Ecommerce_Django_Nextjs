@@ -1,0 +1,155 @@
+@import '../../../src/styles/variables.module.scss';
+
+
+.tabsection {
+    width: 100%;
+    height: 310px;
+    min-height: 32 0px;
+    padding-top: 50px;
+    direction: rtl;
+
+    .tabmenu {
+        display: flex;
+        gap: 40px;
+        height: 30px;
+        widows: 100%;
+        border-bottom: 1px solid $boxBorderColor;
+        padding-right: 20px;
+
+        span {
+            cursor: pointer;
+
+            // &::before {
+            //     // content: "";
+            //     width: 110px;
+            //     transform: translate(-1px, 28px);
+            //     height: 3px;
+            //     /* top: 3px; */
+            //     // display: none;
+            //     position: absolute;
+            //     background-color: $primaryColor;
+
+            // }
+
+            // &:hover:before {
+            //     content: "";
+
+            // }
+
+            // &:nth-child(4)::before {
+            //     content: "";
+            //     width: 84px;
+            //     transform: translate(-1px, 28px);
+            //     height: 3px;
+            //     /* top: 3px; */
+            //     display: none;
+            //     position: absolute;
+            //     background-color: $primaryColor;
+            // }
+
+            // &:hover:before {
+            //     display: block;
+            // }
+        }
+
+        .spanactive {
+            &::before {
+                content: "";
+                width: 115px;
+                transform: translate(-1px, 28px);
+                height: 3px;
+                /* top: 3px; */
+                position: absolute;
+                background-color: $primaryColor;
+            }
+        }
+
+    }
+
+    .tabcontent {
+        width: 100%;
+        padding-right: 20px;
+
+        div {
+            position: absolute;
+
+        }
+
+        p {
+            width: 60%;
+        }
+
+        div {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .divactive {
+            visibility: visible;
+            opacity: 1;
+            animation: fadIn 0.2s;
+        }
+
+        @keyframes fadIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .tabdescription {
+
+            font-size: 14px;
+            padding-top: 20px;
+            line-height: 14px;
+
+            // gap: 10px;
+            h1 {
+                font-size: 15px;
+                height: 11px;
+            }
+        }
+
+        .tabspecification {
+            width: 100%;
+
+            table {
+                font-size: 14px;
+                width: 100%;
+                line-height: 10px;
+
+                // height: 300px;
+                tbody {
+                    text-align: right;
+
+                    tr:nth-child(even) {
+                        background-color: rgb(223, 64, 223, .2);
+                    }
+
+                    tr {
+                        padding: 10px;
+                        border: 1px solid $boxBorderColor;
+                        border-color: inherit;
+                        border-style: solid;
+                        border-width: 0;
+
+                        td {
+                            padding: 10px;
+                            border: 1px solid #F1F1F1;
+                        }
+
+                        th {
+                            padding-left: 10px;
+                            border: 1px solid #F1F1F1;
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+}

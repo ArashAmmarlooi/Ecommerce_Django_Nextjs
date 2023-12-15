@@ -1,0 +1,143 @@
+@import '../../src/styles/variables.module.scss';
+
+
+.cartsection {
+    display: flex;
+    justify-content: space-around;
+    direction: rtl;
+    // height: 300px;
+
+    width: 100%;
+
+    .productcontent {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        // height: 200px;
+        padding-right: 30px;
+        border: 1px solid $boxBorderColor;
+        // flex: 2;
+        border-radius: 10px;
+
+        // .cartcontent:nth-child(:last-child) {
+        //     border: none;
+
+        // }
+        div {
+            width: 98%;
+        }
+
+        .cartcontent {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 142px;
+            border-bottom: 1px solid $boxBorderColor;
+
+
+            .pricebox {
+                padding-right: 20px;
+                font-size: 15px;
+                margin-top: 65px;
+                width: 100px;
+                flex: 2;
+            }
+
+            .imagecontent {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid rgb(201, 201, 201);
+                border-radius: 10px;
+                width: 70px !important;
+                height: 70px;
+            }
+
+            .speccontent {
+                flex: 4;
+                display: flex;
+                padding-right: 40px;
+                flex-direction: column;
+
+                div {
+                    height: 30px;
+                }
+
+                p {
+                    height: 20px;
+                }
+            }
+        }
+
+
+
+        .countcontent {
+            span {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .countbox {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100px;
+                    height: 35px;
+                    border: 1px solid $boxBorderColor;
+                    border-radius: 10px;
+
+                    span {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        width: 25%;
+                        height: 100%;
+                        transition: all 0.2s ease;
+
+                        &:hover {
+                            background-color: rgb(255, 191, 214);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .pricecontent {
+        width: 20%;
+        height: 348px;
+        border-radius: 10px;
+        border: 1px solid $boxBorderColor;
+
+
+
+        // flex: 1;
+        .bascketbtn {
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 222px;
+            height: 50px;
+            cursor: pointer;
+            background-color: rgb(223, 64, 223);
+            border-radius: 10px;
+            margin-right: 23px;
+            margin-top: 20px;
+            transition: all 0.2s ease;
+
+            &:hover {
+                background-color: rgb(196, 54, 196);
+            }
+        }
+
+        div {
+            border-bottom: 1px solid $boxBorderColor;
+
+            p {
+                margin-right: 20px;
+            }
+        }
+    }
+}

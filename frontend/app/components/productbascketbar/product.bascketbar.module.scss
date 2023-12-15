@@ -1,0 +1,97 @@
+@import '../../../src/styles/variables.module.scss';
+
+.productbascketbar {
+    width: 25em;
+    height: 500px;
+    border: 1px solid $boxBorderColor;
+    border-radius: 10px;
+
+    .descbox {
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+        padding-top: 10px;
+        width: 100%;
+        border-bottom: 1px solid $boxBorderColor;
+
+        span {
+            display: flex;
+            align-items: center;
+            // justify-content: space-around;
+            margin-right: 20px;
+        }
+
+        p {
+            margin-right: 10px;
+            font-size: 15px;
+        }
+    }
+
+    .pricebox {
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+
+        .spanprice {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $primaryColor;
+        }
+
+        .countlikebox {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            direction: ltr;
+            margin-top: 12px;
+            width: 100%;
+
+            .likeicon {
+                cursor: pointer;
+            }
+
+            .countbox {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100px;
+                height: 35px;
+                border: 1px solid $boxBorderColor;
+                border-radius: 10px;
+
+                span {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    width: 25%;
+                    height: 100%;
+                    transition: all 0.2s ease;
+
+                    &:hover {
+                        background-color: rgb(255, 191, 214);
+                    }
+                }
+            }
+        }
+
+        .bascketbtn {
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 268px;
+            height: 50px;
+            cursor: pointer;
+            background-color: rgb(223, 64, 223);
+            border-radius: 10px;
+            margin-right: 23px;
+            transition: all 0.2s ease;
+
+            &:hover {
+                background-color: rgb(196, 54, 196);
+            }
+        }
+    }
+}
