@@ -34,7 +34,6 @@ export default function Cart() {
     function Sumproducts(sumproducts, p) {
         let arr: any = [];
         let engarr: any = []
-        console.log(p);
         if (p) {
             p.forEach(elem =>
                 arr.push(elem.textContent.match(/[۰۱۲۳۴۵۶۷۸۹]/g).join(""))
@@ -44,9 +43,6 @@ export default function Cart() {
             });
             let sumproduct = engarr.reduce((acc, elem) => acc + Number(elem), 0)
             setSumproducts(sumproduct)
-            console.log(arr);
-            console.log(engarr);
-            console.log(sumproduct);
             // arr.push(p.textContent)
             // let numb = Number(p.textContent.match(/\d/g).join(""));
             // numb = numb.join("");
@@ -57,8 +53,7 @@ export default function Cart() {
     }
 
     function increase(e) {
-        console.log(ref.current);
-        console.log(e.currentTarget.dataset.id);
+
 
         const index = cart.findIndex(obj => {
             return obj.id == e.currentTarget.dataset.id;
@@ -84,16 +79,13 @@ export default function Cart() {
             setCart(newCart)
             localStorage.setItem("cart", JSON.stringify(newCart));
         }
-        console.log(cart);
-        console.log(newCart);
+
     }
 
     useEffect(() => {
         setCart(JSON.parse(localStorage.getItem("cart") as any))
-        console.log(cart);
     }, [])
-    console.log(cart);
-    console.log(newCart);
+
     useEffect(() => {
         p = document.querySelectorAll('#totalsum') as any;
         Sumproducts(sumproducts, p)
