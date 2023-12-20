@@ -7,9 +7,9 @@ import { useSelector } from 'react-redux';
 
 import { useAppDispatch, useAppSelector } from "../../../src/redux/hooks";
 import { useRouter } from 'next/navigation';
-import Bascket from '../../../public/assets/Basket.svg'
-import Profile from '../../../public/assets/Profile.svg'
-import Logotype from '../../../public/assets/Logotype.png'
+import Bascket from '../../../public/assets/Basket.svg';
+import Profile from '../../../public/assets/Profile.svg';
+import Logotype from '../../../public/assets/Logotype.svg';
 
 import styles from "./navbar.module.scss";
 import { fetchCategory } from "src/redux/slice/categorySlice";
@@ -33,6 +33,7 @@ function tablihover(event, index) {
             item.style.display = 'none'
         });
     });
+
     if (tabitem != undefined) tabitem[index].classList.add("navbar_lactive___E5oP");
     if (tabcontent != undefined) tabcontent[index].style.display = 'block'
 }

@@ -13,7 +13,6 @@ const Breadcrump = (props) => {
     useEffect(() => {
 
     }, [path])
-    console.log(Object.keys(props.params).includes('id'));
     return (
         <>
             <div className={styles.breadcrump}>
@@ -23,7 +22,7 @@ const Breadcrump = (props) => {
                     &ensp; / <p>{decodeURIComponent(props.params[1]).replace(/_/g, " ")}</p></>}
 
                 {Object.keys(props.params).includes('id') && <><p><Link href={`/products/${encodeURIComponent(props.product.category.replace(/ /g, "_"))}`}>{props.product.category}</Link></p>
-                    &ensp; / <p><Link href={`/products/${encodeURIComponent(props.product.category.replace(/ /g, "_"))}/${encodeURIComponent(props.product.subcategory.replace(/ /g, "_"))}`}>{props.product.subcategory}</Link></p>
+                    &ensp; / <p><Link href={`/prodaucts/${encodeURIComponent(props.product.category.replace(/ /g, "_"))}/${encodeURIComponent(props.product.subcategory.replace(/ /g, "_"))}`}>{props.product.subcategory}</Link></p>
                     &ensp; / <p>{props.product.name}</p></>}
             </div >
         </>

@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-around;
     direction: rtl;
+    padding-bottom: 50px;
     // height: 300px;
 
     width: 100%;
@@ -13,6 +14,8 @@
         display: flex;
         flex-direction: column;
         width: 60%;
+        flex-direction: column;
+        align-items: center;
         // height: 200px;
         padding-right: 30px;
         border: 1px solid $boxBorderColor;
@@ -27,20 +30,23 @@
             width: 98%;
         }
 
+        .cartcontent:not(:last-child) {
+            border-bottom: 1px solid $boxBorderColor;
+
+        }
+
         .cartcontent {
             display: flex;
             justify-content: space-between;
             align-items: center;
             height: 142px;
-            border-bottom: 1px solid $boxBorderColor;
 
 
             .pricebox {
-                padding-right: 20px;
-                font-size: 15px;
+                font-size: 14px;
                 margin-top: 65px;
                 width: 100px;
-                flex: 2;
+                flex: 3;
             }
 
             .imagecontent {
@@ -67,6 +73,11 @@
                     height: 20px;
                 }
             }
+        }
+
+        .noproduct {
+            margin: auto;
+            text-align: center;
         }
 
 
@@ -107,37 +118,97 @@
     .pricecontent {
         width: 20%;
         height: 348px;
+        background-color: white;
         border-radius: 10px;
         border: 1px solid $boxBorderColor;
 
+        .bascketbtnwrraper {
+            border-top: 1px solid rgb(201, 201, 201);
+            height: 82px;
 
+            .bascketbtn {
+                margin-top: 13px !important;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 80%;
+                height: 50px;
+                cursor: pointer;
+                background-color: rgb(223, 64, 223);
+                border-radius: 10px;
+                margin-right: 23px;
+                margin-top: 20px;
+                transition: all 0.2s ease;
 
-        // flex: 1;
-        .bascketbtn {
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 222px;
-            height: 50px;
-            cursor: pointer;
-            background-color: rgb(223, 64, 223);
-            border-radius: 10px;
-            margin-right: 23px;
-            margin-top: 20px;
-            transition: all 0.2s ease;
-
-            &:hover {
-                background-color: rgb(196, 54, 196);
+                &:hover {
+                    background-color: rgb(196, 54, 196);
+                }
             }
         }
 
+        // flex: 1;
+
+
         div {
-            border-bottom: 1px solid $boxBorderColor;
+            // border-bottom: 1px solid $boxBorderColor;
 
             p {
                 margin-right: 20px;
             }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1050px) {
+    .cartsection {
+
+        // flex-direction: column;
+        .productcontent {
+            width: 80%;
+
+        }
+
+        .pricecontent {
+            font-size: 14px;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            z-index: 3;
+            height: 110px;
+            position: -webkit-sticky;
+            position: fixed !important;
+            bottom: 0;
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h2 {
+                font-size: 14px !important;
+            }
+
+            .pricecbox {
+                flex-wrap: wrap;
+            }
+
+            .bascketbtn {
+                width: 90%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .cartsection {
+
+        .pricecontent {
+            height: 194px !important;
+
         }
     }
 }

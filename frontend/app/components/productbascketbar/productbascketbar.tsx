@@ -15,8 +15,10 @@ import Productdetailreceipt from '../../../public/assets/productdetailreceipt.sv
 import Heart from '../../../public/assets/heart.svg';
 import { toPersianDigits } from '../../../src/utils/javascript'
 import { fetchCart } from "src/redux/slice/cartSLice";
-let arr: any = []
-let cartobj: any = {}
+let arr: any = [];
+let cartobj: any = {};
+let id = 0;
+let newCart;
 
 const Productbascketbar = (props) => {
     const [cart, setCart] = useState<any>([]);
@@ -34,37 +36,32 @@ const Productbascketbar = (props) => {
     }
 
     function addtocart() {
-        arr.push({
-            'id': product.id,
-            'name': product.name,
-            'price': product.price,
-            'image': product.image,
-            'count': count
-        })
-        console.log(arr);
-        localStorage.setItem("cart", JSON.stringify(arr));
+        let existeditem = arr.find(item => item.productid == product.id)
+        if (existeditem) {
+            const index = arr.findIndex(item => item.productid == product.id)
+            const updatedCart = { ...arr[index], addminoscount: arr[index].addminoscount++ };
+            newCart = [...arr];
+            console.log(newCart);
 
-        console.log(cart);
+        }
+        else {
+            arr.push({
+                'id': id++,
+                'productid': product.id,
+                'name': product.name,
+                'price': product.price,
+                'image': product.image,
+                'productcount': product.count,
+                'addminoscount': count
+            })
 
-        // clientStore.dispatch(fetchCart(arr));
-        // fetchCart(arr);
 
-        // const cartData = JSON.parse(localStorage.getItem("cart") as any)
-        // if (cartData) {
-        //     setCart(cartData);
-        // }
-        // if (cart !== arr) {
-        // }
+        }
+        localStorage.setItem("cart", JSON.stringify(arr)) as any;
     }
-    useEffect(() => {
-        setCart({ ...cart, cartItems: [JSON.parse(localStorage.getItem("cart") as any)] })
-        console.log(props);
-        console.log(cart);
 
-        // console.log(clientStore.getState());
-        // console.log(store.getState());
+    useEffect(() => {
     }, [])
-    console.log(cart);
 
 
     return (

@@ -13,7 +13,6 @@ import { useRouter } from 'next/navigation';
 import { RootState } from "src/redux/store";
 import styles from './products.module.scss';
 import Chevron from '../../../public/assets/chevron.png';
-import Add from '../../../public/assets/Add.png';
 import Star from '../../../public/assets/Star.svg';
 import Item from '../../../public/assets/item.png';
 import Bar from '../../../public/assets/bar.svg';
@@ -24,6 +23,7 @@ import { fetchProduct } from "src/redux/slice/productslice";
 import Resfiltersort from "app/components/resfiltersort/resfiltersort";
 import Breadcrump from "app/components/breadcrump/breadcrump";
 import Pagefeature from "app/components/pagefeature/pagefeature";
+import Addtocart from "app/components/addtocart/addtocart";
 
 
 // type Repo = {
@@ -190,21 +190,26 @@ const Products = async (props) => {
                                             <div>{elem.discount === '1' && <span className={styles.discount} style={{ color: 'rgb(223, 64, 223)' }}>تخفیف : <p className={styles.discbox}>{toPersianDigits(elem.discount_price)}</p>ریال</span>}</div>
                                         </span>
 
-                                        <span className={styles.cardspan}>
-                                            {(elem.in_stock === '0' || elem.in_stock === null) ?
-                                                <p>کالا موجود نیست</p> :
-                                                <><p>افزودن به سبد</p>
-                                                    <Image
-                                                        src={Add}
-                                                        width={30}
-                                                        height={30}
-                                                        alt=""
-                                                    /> </>}
-
-                                        </span>
-
-
                                     </Link>
+                                    <span className={styles.cardspan}>
+                                        {(elem.in_stock === '0' || elem.in_stock === null) ?
+                                            <p>کالا موجود نیست</p> :
+                                            <>
+                                                <Addtocart
+                                                    dataproducts={dataproducts}
+                                                    index={index}
+                                                    elem={...elem}
+                                                // id={elem.id}
+                                                // name={elem.name}
+                                                // price={elem.price}
+                                                // image={elem.image}
+                                                // count={elem.count} 
+                                                />
+                                            </>}
+
+                                    </span>
+
+
                                 </div>
                             ) : <div className={styles.productnotfound}>
                                 <Image
